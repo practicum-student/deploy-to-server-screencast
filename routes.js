@@ -4,7 +4,7 @@ const { users } = require('./db.js');
 router.get('/users', (req, res) => {
   const { authorization } = req.headers;
   if (!authorization || !authorization.startsWith('Bearer ')) {
-    res.status(400).send('Authorization Required\n');
+    res.status(400).send('Authorization is still required\n');
   } else {
     res.send(users);
   }
